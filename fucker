@@ -1,0 +1,109 @@
+if LOGIN_LOADED and not _G.LOGIN_DEBUG == true then
+	error("Login is already loaded!",0)
+	return
+end
+
+pcall(function() getgenv().LOGIN_LOADED = true end)
+
+local Login = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local justframe = Instance.new("Frame")
+local logtintitle = Instance.new("TextLabel")
+local password = Instance.new("TextBox")
+local login = Instance.new("TextButton")
+local Hack = Instance.new("Frame")
+local loadgui = Instance.new("TextButton")
+
+--Properties:
+
+Login.Name = "Login"
+Login.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = Login
+main.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+main.Position = UDim2.new(0.421658963, 0, 0.399014771, 0)
+main.Size = UDim2.new(0, 282, 0, 294)
+main.Active = true
+main.Visible = true
+
+justframe.Name = "justframe"
+justframe.Parent = main
+justframe.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+justframe.Position = UDim2.new(0.0264568999, 0, 0.026448464, 0)
+justframe.Size = UDim2.new(0, 268, 0, 280)
+
+logtintitle.Name = "logtintitle"
+logtintitle.Parent = justframe
+logtintitle.BackgroundColor3 = Color3.fromRGB(92, 94, 94)
+logtintitle.Position = UDim2.new(0.201492533, 0, 0, 0)
+logtintitle.Size = UDim2.new(0, 160, 0, 28)
+logtintitle.Font = Enum.Font.ArialBold
+logtintitle.Text = "Login"
+logtintitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+logtintitle.TextSize = 25.000
+
+password.Name = "password"
+password.Parent = justframe
+password.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+password.Position = UDim2.new(0.175373137, 0, 0.414285749, 0)
+password.Size = UDim2.new(0, 173, 0, 47)
+password.Font = Enum.Font.ArialBold
+password.Text = "Password"
+password.TextColor3 = Color3.fromRGB(255, 255, 255)
+password.TextSize = 20.000
+
+login.Name = "login"
+login.Parent = justframe
+login.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+login.Position = UDim2.new(0, 34, 0, 207)
+login.Size = UDim2.new(0, 200, 0, 50)
+login.Font = Enum.Font.ArialBold
+login.Text = "Login"
+login.TextColor3 = Color3.fromRGB(255, 255, 255)
+login.TextSize = 25.000
+
+Hack.Name = "Hack"
+Hack.Parent = Login
+Hack.BackgroundColor3 = Color3.fromRGB(66, 67, 67)
+Hack.Position = UDim2.new(0, 82, 0, 410)
+Hack.Size = UDim2.new(0, 150, 0, 105)
+Hack.Visible = false
+
+loadgui.Name = "loadgui"
+loadgui.Parent = Hack
+loadgui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+loadgui.BackgroundTransparency = 1.000
+loadgui.Position = UDim2.new(0, 0, 0, 1)
+loadgui.Size = UDim2.new(0, 150, 0, 105)
+loadgui.Font = Enum.Font.ArialBold
+loadgui.Text = "Legend's HUB"
+loadgui.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadgui.TextSize = 20.000
+
+local function TPBFAIY_fake_script()
+    local script = Instance.new('LocalScript', login)
+
+    local UserPass = script.Parent.Parent.password
+    login.MouseButton1Click:connect(function()
+        if UserPass.Text == "998175129819" then
+            Hack.Visible = true
+            wait()
+            main.Visible = false
+        else
+            login.Text = "Invalid Key"
+            wait(0.5)
+            login.Text = "Login"
+        end
+    end)
+end
+coroutine.wrap(TPBFAIY_fake_script)()
+local function EXHK_fake_script()
+    local script = Instance.new('LocalScript', loadgui)
+
+    local login = script.Parent
+    login.MouseButton1Click:connect(function()
+        loadstring(game:HttpGet("https://gist.github.com/OptioniaI/0843a8331e1c1f23567b4574530d1699/raw/02ee299fe7d2b461cb37654347f09114dcbb1f3e/oplegendhubofficial"))()
+    end)
+end
+coroutine.wrap(EXHK_fake_script)()
