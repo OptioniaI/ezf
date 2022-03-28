@@ -103,7 +103,7 @@ local function EXHK_fake_script()
 
     local login = script.Parent
     login.MouseButton1Click:connect(function()
-        loadstring(game:HttpGet("https://gist.githubusercontent.com/OptioniaI/0843a8331e1c1f23567b4574530d1699/raw/3ddcad88ad66cc995602642c279427ce32ae8dd4/oplegendhubofficial"))()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/OptioniaI/0843a8331e1c1f23567b4574530d1699/raw/82f614c90604421e9bea69ec88aeac5bf1960ff2/oplegendhubofficial"))()
     end)
 end
 coroutine.wrap(EXHK_fake_script)()
